@@ -70,7 +70,7 @@ void EspProwlClass::setApplicationName(char *aApplicationName) {
   strncpy(applicationName, aApplicationName, 257);
 }
 
-int EspProwlClass::push(char *eventStr, char *messageStr, int priority) {
+int EspProwlClass::push(char *eventStr, char *messageStr, char *urlKey, int priority) {
   if (EspProwl_DEBUG) {
     Serial.println(apiKey);
     Serial.println(applicationName);
