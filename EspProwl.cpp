@@ -1,4 +1,4 @@
-//  Copyright (C) 2017 Marc Stoecklin
+//  Copyright (C) 2017 Marc Stoecklin, forked 2020 by Timm Kandaouroff (inclusion of url key)
 //
 //  This file is part of EspProwl: iOS push notifications through Prowl
 //
@@ -76,6 +76,7 @@ int EspProwlClass::push(char *eventStr, char *messageStr, int priority) {
     Serial.println(applicationName);
     Serial.println(eventStr);
     Serial.println(messageStr);
+    Serial.println(urlKey);
     Serial.println(priority);
   }
   
@@ -88,6 +89,7 @@ int EspProwlClass::push(char *eventStr, char *messageStr, int priority) {
   push_arguments += "&application="+ (String) applicationName ;
   push_arguments += "&event="+ (String) eventStr ;
   push_arguments += "&description="+ (String) messageStr ;
+  push_arguments += "&url="+ (String) urlKey ;
   push_arguments += "&priority="+ (String) priorityStr ;
 
   if (EspProwl_DEBUG) {
