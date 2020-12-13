@@ -31,7 +31,7 @@ class EspProwlClass {
     void begin(DeliveryMechanism deliveryMechanism);
     void setApiKey(char *apiKey);
     void setApplicationName(char *applicationName);
-    int push(char *eventStr, char *messageStr, int priority);
+    int push(char *eventStr, char *messageStr, char *urlKey, int priority);
 
   private:
     byte notificationServiceIpAddr[4];
